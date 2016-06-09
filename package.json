@@ -1,6 +1,6 @@
 {
   "name": "ng2-googlechart",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
@@ -10,7 +10,7 @@
     "typings": "typings",
     "prepublish": "tsc"
   },
-  "typings":"ng2-googlechart.ts",
+  "typings": "ng2-googlechart.ts",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "2.0.0-rc.1",
