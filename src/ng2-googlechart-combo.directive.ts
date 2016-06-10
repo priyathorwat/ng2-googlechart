@@ -14,8 +14,8 @@ export class ComboChartDirective implements OnInit {
     @Input() rowlabels: any[];
     @Input() columnlabels: any[];
     @Input() options: any;
-     @Input() role: boolean;
-    @Input() roleData: any[];
+     @Input() isrole: boolean;
+    @Input() roledata: any[];
      @Input() roles: any[];
     // Constructor inject a ref to the element
     constructor(elementRef: ElementRef) {
@@ -33,7 +33,7 @@ export class ComboChartDirective implements OnInit {
     }    
     private drawComboChart(dataTable:any,tempData:any){
           if (typeof this.columnlabels !== undefined && typeof this.rowlabels !== undefined && typeof this.data != undefined) {
-            if (this.role) {
+            if (this.isrole) {
                 for (let i = 0; i < this.columnlabels.length; i++) {
                     if (i === 0)
                         dataTable.addColumn(this.columnlabels[i].type, this.columnlabels[i].value);
@@ -46,7 +46,7 @@ export class ComboChartDirective implements OnInit {
                     for (let j = i; j < this.rowlabels.length; j++) {
                         for (let k = 0; k < this.data.length; k++) {
                             item.push(this.data[k][j]);
-                            item.push(this.roleData[k][j]);
+                            item.push(this.roledata[k][j]);
                         }
                         break;
                     }

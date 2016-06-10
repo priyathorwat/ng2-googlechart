@@ -15,8 +15,8 @@ export class ChartDirective implements OnInit {
     @Input() columnlabels: any[];
     @Input() options: any;
     @Input() charttype: any;
-    @Input() role: boolean;
-    @Input() roleData: any[];
+    @Input() isrole: boolean;
+    @Input() roledata: any[];
     @Input() roles: any[];
     constructor(elementRef: ElementRef) {
         this.w = window;
@@ -38,12 +38,12 @@ export class ChartDirective implements OnInit {
             for (let c of this.columnlabels) {
                 dataTable.addColumn(c.type, c.value);
             }
-            if (this.role) {
+            if (this.isrole) {
                 for (let role of this.roles) {
                     dataTable.addColumn(role);
                 }
                 for (let index = 0; index < this.data.length; index++) {
-                    tempData.push([this.rowlabels[index], this.data[index], this.roleData[index]]);
+                    tempData.push([this.rowlabels[index], this.data[index], this.roledata[index]]);
                 }
             } else {
                 for (let index = 0; index < this.data.length; index++) {
